@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="venueGradient" x1="96" y1="88" x2="416" y2="424" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <path d="M112 128L216 352H296L400 128H336L248 304L160 128H112Z" fill="url(#venueGradient)"/>
+  <circle cx="176" cy="416" r="19" fill="url(#venueGradient)" opacity="0.5"/>
+  <circle cx="256" cy="416" r="19" fill="url(#venueGradient)" opacity="0.8"/>
+  <circle cx="336" cy="416" r="19" fill="url(#venueGradient)" opacity="0.5"/>
+</svg>
