@@ -23,6 +23,13 @@
       ],
       "package": "com.anonymous.venuemobile"
     },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png",
+      "name": "Venue Mobile — Staff operations concept by Plex",
+      "shortName": "Venue Mobile",
+      "description": "A fictional mobile operations concept by Plex using seeded demo data."
+    },
     "plugins": [
       "expo-router",
       "expo-secure-store",

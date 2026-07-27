@@ -49,6 +49,7 @@ export default function LoginScreen() {
         </View>
         <Text style={styles.appName}>Venue</Text>
         <Text style={styles.subtitle}>Staff Access</Text>
+        <Text style={styles.conceptNote}>Interactive portfolio concept by Plex</Text>
       </View>
 
       <View style={styles.form}>
@@ -63,6 +64,9 @@ export default function LoginScreen() {
             autoCapitalize="none"
             autoCorrect={false}
             keyboardType="email-address"
+            textContentType="username"
+            autoComplete="email"
+            accessibilityLabel="Email address"
             returnKeyType="next"
           />
         </View>
@@ -76,18 +80,23 @@ export default function LoginScreen() {
             placeholder="••••••••"
             placeholderTextColor={colors.subtle}
             secureTextEntry
+            textContentType="password"
+            autoComplete="current-password"
+            accessibilityLabel="Password"
             returnKeyType="done"
             onSubmitEditing={handleLogin}
           />
         </View>
 
-        {error && <Text style={styles.error}>{error}</Text>}
+        {error && <Text accessibilityRole="alert" accessibilityLiveRegion="polite" style={styles.error}>{error}</Text>}
 
         <TouchableOpacity
           style={[styles.btn, loading && styles.btnDisabled]}
           onPress={handleLogin}
           disabled={loading}
           activeOpacity={0.8}
+          accessibilityRole="button"
+          accessibilityLabel={loading ? 'Signing in' : 'Sign in'}
         >
           {loading ? (
             <ActivityIndicator color="#fff" size="small" />
@@ -99,10 +108,14 @@ export default function LoginScreen() {
         <TouchableOpacity
           onPress={() => { setEmail('demo@venue.ee'); setPassword('demo1234'); }}
           style={styles.demoBtn}
+          accessibilityRole="button"
+          accessibilityHint="Fills the read-only demo credentials"
         >
           <Text style={styles.demoBtnText}>✦  Try Demo</Text>
         </TouchableOpacity>
-        <Text style={styles.demoHint}>Read-only · explore without changing anything</Text>
+        <Text style={styles.demoHint}>
+          Fills read-only demo credentials · all people and activity are fictional
+        </Text>
       </View>
     </KeyboardAvoidingView>
   );
@@ -149,6 +162,13 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 4,
     letterSpacing: 0.5,
+  },
+  conceptNote: {
+    color: colors.accent,
+    fontSize: 10,
+    marginTop: 10,
+    letterSpacing: 0.9,
+    textTransform: 'uppercase',
   },
   form: {
     gap: 16,
